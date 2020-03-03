@@ -1,0 +1,7 @@
+安裝套件
+
+pip install panda
+
+pip install sqlalchemy
+# 讀寫 Mysql 資料庫
+

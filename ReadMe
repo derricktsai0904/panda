@@ -8,7 +8,7 @@ pip install sqlalchemy
 參考 Panda DataFrame to_sql 的函式說明
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html
 
-<h2>pandas.DataFrame.to_sql</h2>
+## pandas.DataFrame.to_sql
 DataFrame.to_sql(self, name: str, con, schema=None, if_exists: str = 'fail', 
 index: bool = True, index_label=None, chunksize=None, dtype=None, method=None)
 
@@ -16,17 +16,17 @@ Write records stored in a DataFrame to a SQL database.
 
 Databases supported by SQLAlchemy  are supported. Tables can be newly created, appended to, or overwritten.
 
-<h1>Parameters</h1>
-<h2>name : str</h2>
+# Parameters
+## name : str
 Name of SQL table.
 
-<h2>cons : qlalchemy.engine.Engine or sqlite3.Connection</h2>
+## cons : qlalchemy.engine.Engine or sqlite3.Connection
 Using SQLAlchemy makes it possible to use any DB supported by that library. Legacy support is provided for sqlite3.Connection objects. The user is responsible for engine disposal and connection closure for the SQLAlchemy connectable See here
 
-<h2>schema : str, optional</h2>
+## schema : str, optional
 Specify the schema (if database flavor supports this). If None, use default schema.
 
-<h2>if_exists{‘fail’, ‘replace’, ‘append’}, default ‘fail’</h2>
+## if_exists{‘fail’, ‘replace’, ‘append’}, default ‘fail’
 How to behave if the table already exists.
 
 fail: Raise a ValueError.
@@ -35,19 +35,19 @@ replace: Drop the table before inserting new values.
 
 append: Insert new values to the existing table.
 
-<h2>index : bool, default True</h2>
+## index : bool, default True
 Write DataFrame index as a column. Uses index_label as the column name in the table.
 
-<h2>index_label : str or sequence, default None</h2>
+## index_label : str or sequence, default None
 Column label for index column(s). If None is given (default) and index is True, then the index names are used. A sequence should be given if the DataFrame uses MultiIndex.
 
-<h2>chunksize : int, optional</h2>
+## chunksize : int, optional
 Specify the number of rows in each batch to be written at a time. By default, all rows will be written at once.
 
-<h2>dtype : dict or scalar, optional</h2>
+## dtype : dict or scalar, optional
 Specifying the datatype for columns. If a dictionary is used, the keys should be the column names and the values should be the SQLAlchemy types or strings for the sqlite3 legacy mode. If a scalar is provided, it will be applied to all columns.
 
-<h2>method : {None, ‘multi’, callable}, optional</h2>
+## method : {None, ‘multi’, callable}, optional
 Controls the SQL insertion clause used:
 
 None : Uses standard SQL INSERT clause (one per row).
@@ -60,7 +60,7 @@ Details and a sample callable implementation can be found in the section insert 
 
 New in version 0.24.0.
 
-<h2>Raises</h2>
+## Raises
 ValueError
 When the table already exists and if_exists is ‘fail’ (the default).
 
